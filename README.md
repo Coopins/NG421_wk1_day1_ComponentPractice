@@ -92,8 +92,8 @@ Use the Input decorator to allow our components to accept data through an attrib
   * Use this property to populate the html with the data `taskItem.task`
   * In `task-panel.component.html` pass in the task to the task item component `<app-task-item *ngFor="let task of tasks" [taskItem]="task"></app-task-item>`
 
+COMPLETE
 
-  
 * MessagePreview
   * In `message-preview.component.ts`, create a class property named `message` and decorate it with `Input()`
   * Use this property to populate the html with the data `{{message.message}}`
