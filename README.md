@@ -26,20 +26,20 @@ Let's reorganize our project code into components. There is one file `src\app\ap
 
 
 ### Components to make (create in order)
-* DateTime
-* MessagePreview
-* TaskItem
-* TopNav
-* SideNav
-* Comments
-* Tasks
-* Orders
-* Tickets
-* AreaChart
-* DonutChart
-* TasksPanel
-* TransactionsPanel
-* Dashboard
+* DateTime: Complete
+* MessagePreview: Complete
+* TaskItem: Complete
+* TopNav: Complete
+* SideNav: Complete
+* Comments: Complete
+* Tasks: Complete
+* Orders: Complete
+* Tickets: Complete
+* AreaChart: Complete 
+* DonutChart: Complete 
+* TasksPanel: Complete
+*TransactionsPanel: Complete
+* Dashboard: Complete
 
 ### Use components where appropriate
 * Wherever you cut out the html, you need to replace it with the tag of the component
@@ -49,6 +49,9 @@ Let's reorganize our project code into components. There is one file `src\app\ap
 Let's use our data to dynamically make some html and components show up in our page.
 
 ### Dynamic elements
+
+COMPLETE
+
 * TransactionsPanel (transaction-panel.component.ts)
   * Import the orders array into this component from `./src/app/orders.ts`
   * In the `OnNgInit`method, assign this array to a class property called `orders` 
@@ -56,12 +59,18 @@ Let's use our data to dynamically make some html and components show up in our p
   * `<tr *ngFor="let order of orders"></tr>`
   * Populate the hard coded information with dynamic data from the `order` variable
   * We should now see multiple rows in the transaction panel.
+
+COMPLETE
+  
 * TaskPanel (task-panel.component.ts)
   * Import the tasks array into this component from `./src/app/tasks.ts`
   * In the `OnNgInit`method, assign this array to a class property called `tasks` 
   * In `task-panel.component.html` use `ngFor` on the `<app-task-item>` element
   * `<app-task-item *ngFor="let task of tasks"></app-task-item>`
   * We shoudl now see multiple rows in the task panel.
+
+COMPLETE
+
 * TopNav (top-nav.component.ts)
   * Import the messages array into this component from `./src/app/messages.ts`
   * In the `OnNgInit`method, assign this array to a class property called `messages` 
@@ -74,11 +83,17 @@ Use NgIf in the TransactionPanel component. If the order amount is greater than 
 
 
 ### Input
+
+COMPLETE
+
 Use the Input decorator to allow our components to accept data through an attribute.
 * TaskItem
   * In `task-item.component.ts`, create a class property named `taskItem` and decorate it with `Input()`
   * Use this property to populate the html with the data `taskItem.task`
   * In `task-panel.component.html` pass in the task to the task item component `<app-task-item *ngFor="let task of tasks" [taskItem]="task"></app-task-item>`
+
+
+  
 * MessagePreview
   * In `message-preview.component.ts`, create a class property named `message` and decorate it with `Input()`
   * Use this property to populate the html with the data `{{message.message}}`
